@@ -254,57 +254,57 @@ export const CATEGORY_INTROS: Record<string, CategoryIntro> = {
   'Data Science': {
     category: 'Data Science',
     title: 'Data Science & Machine Learning',
-    description: 'El Data Science combina estadística, programación y conocimiento del negocio para extraer insights de datos y construir modelos predictivos. Mi enfoque se centra en pipelines completos desde la ingesta de datos hasta el deployment de modelos.',
+    description: 'El Data Science combina estadística, programación y conocimiento del negocio para extraer insights de datos y construir modelos predictivos. Esta sección estará disponible próximamente con casos de uso detallados.',
     keyPoints: [
-      'Modelado predictivo con scikit-learn (regresión, clustering, clasificación)',
-      'Análisis exploratorio de datos (EDA) con pandas y NumPy',
-      'Feature engineering y selección de variables',
-      'Validación cruzada y optimización de hiperparámetros',
-      'Visualización de resultados con seaborn y matplotlib'
+      'Modelado predictivo con scikit-learn',
+      'Análisis exploratorio de datos (EDA)',
+      'Feature engineering',
+      'Validación cruzada y optimización',
+      'Visualización de resultados'
     ],
     challenges: [
-      'Manejo de datos desbalanceados y outliers',
-      'Evitar overfitting en modelos complejos',
-      'Escalabilidad de pipelines para grandes volúmenes',
-      'Interpretabilidad vs. precisión del modelo'
+      'Manejo de datos desbalanceados',
+      'Evitar overfitting',
+      'Escalabilidad de pipelines',
+      'Interpretabilidad vs. precisión'
     ],
     technologies: ['Python', 'Pandas', 'Scikit-learn', 'NumPy', 'Matplotlib', 'Seaborn', 'Jupyter']
   },
   'Business Intelligence': {
     category: 'Business Intelligence',
     title: 'Business Intelligence & Analytics',
-    description: 'BI transforma datos brutos en información accionable mediante procesos ETL, modelado dimensional y visualización estratégica. Mi experiencia incluye desde el diseño de data warehouses hasta la creación de dashboards ejecutivos.',
+    description: 'BI transforma datos brutos en información accionable mediante procesos ETL, modelado dimensional y visualización estratégica. Próximamente con proyectos detallados de dashboards y análisis.',
     keyPoints: [
-      'Diseño e implementación de procesos ETL (Extract, Transform, Load)',
-      'Modelado dimensional (esquemas estrella y copo de nieve)',
-      'Creación de dashboards interactivos en Power BI, Qlik y Tableau',
-      'Definición de KPIs y métricas de negocio',
-      'Integración de múltiples fuentes de datos (SQL, Excel, APIs)'
+      'Diseño e implementación de procesos ETL',
+      'Modelado dimensional',
+      'Dashboards interactivos en Power BI, Qlik y Tableau',
+      'Definición de KPIs y métricas',
+      'Integración de múltiples fuentes de datos'
     ],
     challenges: [
-      'Garantizar calidad y consistencia de datos',
-      'Optimizar tiempos de refresco en dashboards',
-      'Diseñar visualizaciones efectivas y no engañosas',
-      'Escalar soluciones para usuarios concurrentes'
+      'Garantizar calidad de datos',
+      'Optimizar tiempos de refresco',
+      'Diseñar visualizaciones efectivas',
+      'Escalar soluciones'
     ],
     technologies: ['Power BI', 'Qlik', 'Tableau', 'SQL', 'Snowflake', 'QGIS', 'Python', 'DAX']
   },
   'Developer': {
     category: 'Developer',
     title: 'Desarrollo & Automatización',
-    description: 'El desarrollo de software y automatización busca eliminar tareas repetitivas y construir soluciones eficientes y escalables. Mi enfoque combina buenas prácticas de ingeniería de software con integración continua.',
+    description: 'El desarrollo de software y automatización busca eliminar tareas repetitivas y construir soluciones eficientes. Esta sección se actualizará con proyectos de automatización y desarrollo.',
     keyPoints: [
-      'Automatización de procesos ETL con Python',
-      'Integración de sistemas (SAP, Excel, bases de datos)',
-      'Desarrollo de scripts y herramientas de productividad',
-      'Versionado con Git y flujos de trabajo colaborativos',
+      'Automatización de procesos ETL',
+      'Integración de sistemas',
+      'Desarrollo de scripts y herramientas',
+      'Versionado con Git',
       'Documentación técnica y testing'
     ],
     challenges: [
-      'Mantener código legible y mantenible',
-      'Gestionar dependencias y entornos',
-      'Garantizar robustez ante errores',
-      'Balancear rapidez de desarrollo con calidad'
+      'Mantener código mantenible',
+      'Gestionar dependencias',
+      'Garantizar robustez',
+      'Balancear rapidez con calidad'
     ],
     technologies: ['Python', 'Git', 'Docker', 'SQL', 'APIs REST', 'JavaScript', 'Linux']
   }
