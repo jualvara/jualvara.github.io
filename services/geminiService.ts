@@ -3,7 +3,12 @@ import { HERO_DATA, PROJECTS, SKILLS, EXPERIENCE } from '../constants';
 
 // Initialize Gemini Client
 // Note: In a real app, ensure process.env.API_KEY is set.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+let ai: GoogleGenAI | null = null;
+try {
+  ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+} catch (error) {
+  console.error("Failed to initialize Gemini Client:", error);
+}
 
 const SYSTEM_INSTRUCTION = `
 Estás actuando como el asistente personal de IA para el portafolio profesional de ${HERO_DATA.name}.
@@ -45,6 +50,10 @@ export const sendMessageToGemini = async (history: { role: 'user' | 'model', tex
       role: msg.role,
       parts: [{ text: msg.text }]
     }));
+
+    if (!ai) {
+      return "⚠️ Error: Cliente IA no inicializado. Verifica la API Key.";
+    }
 
     const chat = ai.chats.create({
       model: 'gemini-2.5-flash',
