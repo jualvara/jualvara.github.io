@@ -50,6 +50,15 @@ export interface SkillCategory {
   icon: string; // Lucide icon name
 }
 
+export interface CategoryIntro {
+  category: ProjectCategory;
+  title: string;
+  description: string;
+  keyPoints: string[];
+  challenges: string[];
+  technologies: string[];
+}
+
 export interface ChatMessage {
   id: string;
   role: 'user' | 'model';

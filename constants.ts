@@ -1,4 +1,4 @@
-import { Project, Skill, Experience, Education, Language, ProcessStep, SkillCategory } from './types';
+import { Project, Skill, Experience, Education, Language, ProcessStep, SkillCategory, CategoryIntro } from './types';
 
 export const HERO_DATA = {
   name: "Juan Carlos Alvarado",
@@ -14,7 +14,7 @@ export const PROJECTS: Project[] = [
     description: 'Mapeo funcional de procesos (ventas, compras, stock) y migración a Odoo. Creación de matriz de datos integral para control de inventario.',
     tags: ['Odoo', 'Python', 'ETL', 'Migration'],
     category: 'Odoo',
-    imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/projects/odoo-implementation.png',
     demoUrl: '#',
   },
   {
@@ -23,7 +23,7 @@ export const PROJECTS: Project[] = [
     description: 'Desarrollo de modelos predictivos de demanda utilizando Python (pandas, scikit-learn, K-means, regresión).',
     tags: ['Python', 'Scikit-learn', 'Machine Learning', 'Pandas'],
     category: 'Data Science',
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/projects/predictive-modeling.png',
     githubUrl: '#',
   },
   {
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
     description: 'Diseño y operación de SIG integrando más de 12 áreas temáticas. Pipelines ETL para Snowflake y SQL.',
     tags: ['QGIS', 'SQL', 'Snowflake', 'ETL'],
     category: 'Business Intelligence',
-    imageUrl: 'https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/projects/gis-system.png',
     demoUrl: '#',
   },
   {
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     description: 'Desarrollo de dashboards en Power BI y QGIS con KPIs de desempeño territorial y análisis espacial avanzado.',
     tags: ['Power BI', 'Data Visualization', 'KPIs', 'Analysis'],
     category: 'Business Intelligence',
-    imageUrl: 'https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/projects/dashboards-powerbi.png',
     demoUrl: '#',
   },
   {
@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
     description: 'Automatización de procesos ETL e integración de datos de SAP y Excel para reportes consolidados.',
     tags: ['ETL', 'Automation', 'SAP', 'Excel'],
     category: 'Developer',
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/projects/etl-automation.png',
     githubUrl: '#',
   }
 ];
@@ -230,3 +230,82 @@ export const DETAILED_SKILLS: SkillCategory[] = [
     ]
   }
 ];
+
+export const CATEGORY_INTROS: Record<string, CategoryIntro> = {
+  'Odoo': {
+    category: 'Odoo',
+    title: 'Desarrollo Odoo ERP',
+    description: 'Odoo es un framework ERP modular de código abierto escrito en Python que permite personalizar y extender procesos de negocio mediante el desarrollo de módulos personalizados. Mi experiencia abarca desde la arquitectura ORM hasta la integración completa de flujos empresariales.',
+    keyPoints: [
+      'Desarrollo de módulos personalizados con Python OOP y ORM de Odoo',
+      'Diseño de vistas XML/QWeb (form, list, kanban, wizards)',
+      'Implementación de lógica de negocio con decoradores (@api.depends, @api.onchange)',
+      'Herencia de modelos y extensión de funcionalidad nativa',
+      'Integración con PostgreSQL y optimización de consultas'
+    ],
+    challenges: [
+      'Mantener compatibilidad entre versiones (v16-v18)',
+      'Optimizar rendimiento en operaciones masivas con ORM',
+      'Diseñar arquitecturas escalables y mantenibles',
+      'Gestionar dependencias entre módulos personalizados'
+    ],
+    technologies: ['Python', 'PostgreSQL', 'XML/QWeb', 'JavaScript', 'OWL', 'Docker', 'Git']
+  },
+  'Data Science': {
+    category: 'Data Science',
+    title: 'Data Science & Machine Learning',
+    description: 'El Data Science combina estadística, programación y conocimiento del negocio para extraer insights de datos y construir modelos predictivos. Mi enfoque se centra en pipelines completos desde la ingesta de datos hasta el deployment de modelos.',
+    keyPoints: [
+      'Modelado predictivo con scikit-learn (regresión, clustering, clasificación)',
+      'Análisis exploratorio de datos (EDA) con pandas y NumPy',
+      'Feature engineering y selección de variables',
+      'Validación cruzada y optimización de hiperparámetros',
+      'Visualización de resultados con seaborn y matplotlib'
+    ],
+    challenges: [
+      'Manejo de datos desbalanceados y outliers',
+      'Evitar overfitting en modelos complejos',
+      'Escalabilidad de pipelines para grandes volúmenes',
+      'Interpretabilidad vs. precisión del modelo'
+    ],
+    technologies: ['Python', 'Pandas', 'Scikit-learn', 'NumPy', 'Matplotlib', 'Seaborn', 'Jupyter']
+  },
+  'Business Intelligence': {
+    category: 'Business Intelligence',
+    title: 'Business Intelligence & Analytics',
+    description: 'BI transforma datos brutos en información accionable mediante procesos ETL, modelado dimensional y visualización estratégica. Mi experiencia incluye desde el diseño de data warehouses hasta la creación de dashboards ejecutivos.',
+    keyPoints: [
+      'Diseño e implementación de procesos ETL (Extract, Transform, Load)',
+      'Modelado dimensional (esquemas estrella y copo de nieve)',
+      'Creación de dashboards interactivos en Power BI, Qlik y Tableau',
+      'Definición de KPIs y métricas de negocio',
+      'Integración de múltiples fuentes de datos (SQL, Excel, APIs)'
+    ],
+    challenges: [
+      'Garantizar calidad y consistencia de datos',
+      'Optimizar tiempos de refresco en dashboards',
+      'Diseñar visualizaciones efectivas y no engañosas',
+      'Escalar soluciones para usuarios concurrentes'
+    ],
+    technologies: ['Power BI', 'Qlik', 'Tableau', 'SQL', 'Snowflake', 'QGIS', 'Python', 'DAX']
+  },
+  'Developer': {
+    category: 'Developer',
+    title: 'Desarrollo & Automatización',
+    description: 'El desarrollo de software y automatización busca eliminar tareas repetitivas y construir soluciones eficientes y escalables. Mi enfoque combina buenas prácticas de ingeniería de software con integración continua.',
+    keyPoints: [
+      'Automatización de procesos ETL con Python',
+      'Integración de sistemas (SAP, Excel, bases de datos)',
+      'Desarrollo de scripts y herramientas de productividad',
+      'Versionado con Git y flujos de trabajo colaborativos',
+      'Documentación técnica y testing'
+    ],
+    challenges: [
+      'Mantener código legible y mantenible',
+      'Gestionar dependencias y entornos',
+      'Garantizar robustez ante errores',
+      'Balancear rapidez de desarrollo con calidad'
+    ],
+    technologies: ['Python', 'Git', 'Docker', 'SQL', 'APIs REST', 'JavaScript', 'Linux']
+  }
+};
