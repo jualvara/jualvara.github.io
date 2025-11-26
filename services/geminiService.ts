@@ -1,13 +1,26 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 import { HERO_DATA, PROJECTS, SKILLS, EXPERIENCE } from '../constants';
 
-// Initialize Gemini Client
-// Note: In a real app, ensure process.env.API_KEY is set.
+// Lazy initialization of Gemini Client
+// Only initialize when needed to prevent app crashes if API key is missing
 let ai: GoogleGenAI | null = null;
-try {
-  ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-} catch (error) {
-  console.error("Failed to initialize Gemini Client:", error);
+
+function getAIClient(): GoogleGenAI | null {
+  if (ai) return ai;
+
+  const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    console.warn("Gemini API key not found. AI chat will be disabled.");
+    return null;
+  }
+
+  try {
+    ai = new GoogleGenAI({ apiKey });
+    return ai;
+  } catch (error) {
+    console.error("Failed to initialize Gemini Client:", error);
+    return null;
+  }
 }
 
 const SYSTEM_INSTRUCTION = `
@@ -42,8 +55,10 @@ Directrices de comportamiento:
 
 export const sendMessageToGemini = async (history: { role: 'user' | 'model', text: string }[], message: string): Promise<string> => {
   try {
-    if (!process.env.API_KEY) {
-      return "⚠️ Error: API Key no configurada. El chat IA requiere una clave API válida para funcionar.";
+    const client = getAIClient();
+
+    if (!client) {
+      return "⚠️ El chat con IA no está disponible en este momento. Por favor, contacta directamente a través del formulario de contacto.";
     }
 
     const chatHistory = history.map(msg => ({
@@ -51,11 +66,7 @@ export const sendMessageToGemini = async (history: { role: 'user' | 'model', tex
       parts: [{ text: msg.text }]
     }));
 
-    if (!ai) {
-      return "⚠️ Error: Cliente IA no inicializado. Verifica la API Key.";
-    }
-
-    const chat = ai.chats.create({
+    const chat = client.chats.create({
       model: 'gemini-2.5-flash',
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
