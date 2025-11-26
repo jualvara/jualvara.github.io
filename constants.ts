@@ -2,9 +2,9 @@ import { Project, Skill, Experience, Education, Language, ProcessStep, SkillCate
 
 export const HERO_DATA = {
   name: "Juan Carlos Alvarado",
-  title: "Data Scientist | Business Intelligence | Odoo Developer",
+  title: "Odoo Developer | IT & Data Analyst | ERP & Business Intelligence",
   tagline: "Convirtiendo datos en decisiones y código en soluciones.",
-  description: "Experto en el ciclo completo del dato: desde la extracción y análisis predictivo hasta la visualización estratégica y el desarrollo de software a medida. Especialista en implementaciones Odoo y Data Science.",
+  description: "Profesional en Tecnologías de la Información, Ciencia de Datos y Desarrollo ERP, con más de 3 años de experiencia en desarrollo de Odoo (v16-18). Combino un perfil técnico sólido en Python, SQL, JavaScript, HTML/XML y PostgreSQL con experiencia práctica en personalización de Odoo, construcción de dashboards y diseño de pipelines de datos.",
 };
 
 export const PROJECTS: Project[] = [
@@ -66,34 +66,40 @@ export const SKILLS: Skill[] = [
 
 export const EXPERIENCE: Experience[] = [
   {
-    company: "Freelance",
-    role: "Odoo Developer & Data Analyst",
-    period: "Julio 2023 – Actualidad",
-    description: "Elaboración de mapeos funcionales, migración a módulos Odoo, modelado predictivo de demanda con Python y automatización de procesos ETL."
+    company: "QubiQ",
+    role: "Odoo Developer",
+    period: "Mayo 2025 – Actualidad",
+    description: "Desarrollo de módulos personalizados en Odoo (v16-18): creación y extensión de modelos (models.Model, TransientModel), lógica ORM avanzada (search, browse, mapped), implementación de decoradores (@api.depends, @api.onchange, @api.constrains), personalización de vistas XML/QWeb y desarrollo JavaScript/OWL."
+  },
+  {
+    company: "Marsel",
+    role: "IT & Data Operations Lead",
+    period: "Julio 2023 – Agosto 2024",
+    description: "Evaluación y pruebas funcionales de Odoo para procesos de inventario, ventas y almacén. Elaboración de mapeos funcionales de procesos de negocio para migración a módulos Odoo (Sales, Inventory, Purchase). Modelado predictivo de demanda con Python (pandas, scikit-learn, K-means), automatización ETL en Power BI y Qlik, integración de datos SAP/Excel."
   },
   {
     company: "Alcaldía Miguel Hidalgo",
     role: "Geospatial & Data Analyst Coordinator",
     period: "Marzo 2022 – Julio 2023",
-    description: "Diseño y operación del SIG, pipelines ETL para Snowflake/SQL, dashboards en Power BI y análisis espacial avanzado."
+    description: "Diseño y operación del Sistema de Información Geográfica institucional (12+ áreas temáticas). Planificación y ejecución de procesos ETL para integrar información de Excel, CSV, Oracle hacia Snowflake y SQL. Desarrollo de dashboards ejecutivos en Power BI y QGIS con KPIs de desempeño territorial. Análisis espacial avanzado con buffers, mapas de calor y modelos SAR para análisis predictivo. Coordinación de equipo técnico."
   },
   {
     company: "Grupo Fractalia",
     role: "IT Support & Systems Analyst",
     period: "Mayo 2019 – Marzo 2022",
-    description: "Soporte técnico, gestión de incidencias, configuración de redes y manejo funcional básico de Odoo."
+    description: "Soporte técnico de primer y segundo nivel a clientes empresariales. Gestión de incidencias mediante Autotask, Remedy y Jira. Configuración de redes (routers, MikroTik, switches), VPNs y monitoreo con Nagios. Administración de usuarios y políticas en Active Directory y GPO. Manejo funcional básico de Odoo para tareas operativas: consultas de inventario, seguimiento de tickets internos y soporte a usuarios finales."
   },
   {
     company: "Gentera",
     role: "IT Systems & Helpdesk Analyst",
     period: "Febrero 2017 – Abril 2019",
-    description: "Soporte a usuarios, administración de Active Directory y gestión de incidencias."
+    description: "Soporte IT, administración de Active Directory, gestión de incidencias y mantenimiento de estaciones de trabajo."
   },
   {
     company: "K-neos",
     role: "IT Technician & Network Assistant",
     period: "Julio 2015 – Enero 2017",
-    description: "Migración de equipos, soporte técnico y configuración de redes."
+    description: "Soporte técnico, migración de equipos con Clonezilla, configuración de redes LAN y gestión de incidencias."
   }
 ];
 
@@ -112,9 +118,9 @@ export const EDUCATION: Education[] = [
   },
   {
     school: "Universidad Nacional Autónoma de México (UNAM)",
-    degree: "Maestría en Finanzas Públicas",
+    degree: "Especialidad en Finanzas Públicas",
     period: "Junio 2020 – Junio 2021",
-    description: "Presupuestos públicos, contabilidad gubernamental, macroeconomía y modelos econométricos."
+    description: "Presupuestos públicos, contabilidad gubernamental, análisis financiero, macroeconomía, microeconomía y modelos econométricos."
   },
   {
     school: "Universidad Nacional Autónoma de México (UNAM)",
