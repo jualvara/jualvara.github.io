@@ -8,14 +8,24 @@ export const HERO_DATA = {
 };
 
 export const PROJECTS: Project[] = [
+
   {
-    id: 'odoo-1',
-    title: 'Implementación Odoo & Migración',
-    description: 'Mapeo funcional de procesos (ventas, compras, stock) y migración a Odoo. Creación de matriz de datos integral para control de inventario.',
-    tags: ['Odoo', 'Python', 'ETL', 'Migration'],
+    id: 'odoo-everyone',
+    title: 'Odoo for Everyone',
+    description: 'Plataforma integral de formación técnica en Odoo orientada a democratizar el acceso al conocimiento especializado en ERP.',
+    longDescription: 'Desarrollé una plataforma integral de formación técnica en Odoo orientada a democratizar el acceso al conocimiento especializado en ERP y a mejorar la capacitación técnica dentro de empresas que implementan o utilizan Odoo como herramienta de gestión. El proyecto combina contenidos progresivos, entornos de práctica guiada e inteligencia pedagógica para entrenar a desarrolladores y consultores en escenarios reales del ecosistema Odoo.\n\nLa plataforma se estructura como un sistema modular inspirado en modelos de aprendizaje adaptativo (tipo DataCamp/Duolingo), que permite a usuarios de distintos niveles adquirir competencias clave en desarrollo backend, personalización de vistas, QWeb/OWL, integraciones API y calidad de código conforme a estándares profesionales (OCA/QubiQ).\n\nIncluye workflows gamificados, proyectos aplicados y un motor de evaluación basado en retos diarios/semanales, lo que facilita el refuerzo continuo y la transferencia directa del conocimiento a contextos productivos.',
+    tags: ['Odoo', 'Education', 'LMS', 'Gamification', 'Python', 'OWL'],
     category: 'Odoo',
-    imageUrl: '/images/projects/odoo-implementation.png',
+    imageUrl: '/images/projects/odoo-everyone.png', // Placeholder, user might need to generate one
     demoUrl: '#',
+    githubUrl: '#',
+    highlights: [
+      'Acelerar el onboarding de nuevos desarrolladores.',
+      'Estandarizar prácticas de codificación y calidad.',
+      'Simular escenarios reales antes de intervenir en entornos críticos.',
+      'Medir habilidades, progresos y brechas técnicas dentro del equipo.',
+      'Reducir costos de formación y dependencia de perfiles senior.'
+    ]
   },
   {
     id: 'ds-1',

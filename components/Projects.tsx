@@ -255,49 +255,92 @@ const Projects: React.FC = () => {
                       <div className="flex-1 h-px bg-gradient-to-r from-slate-700 to-transparent" />
                     </div>
 
-                    {/* Projects List - Compact Diagram Style */}
-                    <div className="space-y-3">
+                    {/* Projects List - Expanded Diagram Style for Odoo */}
+                    <div className="space-y-8">
                       {group.projects.map((project, projIndex) => (
                         <div
                           key={project.id}
-                          className="group"
+                          className={`group relative rounded-2xl overflow-hidden border backdrop-blur-sm transition-all hover:shadow-2xl ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} bg-slate-900/40 border-slate-800 hover:border-primary/40 hover:bg-slate-900/60`}
+                          style={{ transitionDelay: `${(groupIndex + 3) * 100 + projIndex * 100}ms` }}
                         >
-                          {/* Compact Project Row */}
-                          <button
-                            onClick={() => setActiveCategory(group.category)}
-                            className={`w-full flex items-center gap-3 p-3 rounded-lg border transition-all hover:shadow-md ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                              } bg-slate-900/40 backdrop-blur-sm border-slate-800 hover:border-primary/40 hover:bg-slate-900/60`}
-                            style={{ transitionDelay: `${(groupIndex + 3) * 100 + projIndex * 100}ms` }}
-                          >
-                            {/* Project Icon/Number */}
-                            <div className="flex-shrink-0 w-8 h-8 bg-slate-800 rounded flex items-center justify-center text-xs font-bold text-slate-400 border border-slate-700">
-                              {projIndex + 1}
+                          <div className="md:flex">
+                            {/* Image Section */}
+                            <div className="md:w-1/3 relative h-64 md:h-auto overflow-hidden">
+                              <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-transparent to-transparent z-10" />
+                              <img
+                                src={project.imageUrl}
+                                alt={project.title}
+                                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                              />
+                              <div className="absolute top-4 left-4 z-20">
+                                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold shadow-lg">
+                                  {projIndex + 1}
+                                </div>
+                              </div>
                             </div>
 
-                            {/* Project Title */}
-                            <div className="flex-1 text-left">
-                              <h4 className="text-sm font-semibold text-white group-hover:text-primary transition-colors">
-                                {project.title}
-                              </h4>
-                            </div>
+                            {/* Content Section */}
+                            <div className="p-6 md:w-2/3 flex flex-col">
+                              <div className="mb-4">
+                                <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                                  {project.title}
+                                </h4>
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                  {project.tags.map((tag) => (
+                                    <span key={tag} className="px-2.5 py-1 text-xs font-medium text-primary-200 bg-primary/10 rounded-md border border-primary/20">
+                                      {tag}
+                                    </span>
+                                  ))}
+                                </div>
 
-                            {/* Tags - Compact */}
-                            <div className="hidden sm:flex items-center gap-1.5 flex-shrink-0">
-                              {project.tags.slice(0, 2).map((tag) => (
-                                <span key={tag} className="px-2 py-0.5 text-[9px] font-medium text-slate-400 bg-slate-800/60 rounded border border-slate-700/50">
-                                  {tag}
-                                </span>
-                              ))}
-                              {project.tags.length > 2 && (
-                                <span className="text-[9px] text-slate-500">+{project.tags.length - 2}</span>
+                                {/* Description */}
+                                <div className="text-slate-300 leading-relaxed space-y-4">
+                                  <p>{project.description}</p>
+                                  {project.longDescription && (
+                                    <div className="text-sm text-slate-400 mt-4 p-4 bg-slate-950/50 rounded-xl border border-slate-800/50">
+                                      {project.longDescription.split('\n\n').map((paragraph, idx) => (
+                                        <p key={idx} className="mb-2 last:mb-0">{paragraph}</p>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+
+                              {/* Highlights Section */}
+                              {project.highlights && (
+                                <div className="mt-4 mb-6">
+                                  <h5 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 flex items-center gap-2">
+                                    <CheckCircle2 size={16} />
+                                    Objetivos & Impacto
+                                  </h5>
+                                  <div className="grid sm:grid-cols-2 gap-3">
+                                    {project.highlights.map((highlight, idx) => (
+                                      <div key={idx} className="flex items-start gap-2 text-sm text-slate-300 bg-slate-800/30 p-2 rounded-lg border border-slate-700/30">
+                                        <ArrowRight size={14} className="text-primary mt-1 flex-shrink-0" />
+                                        <span>{highlight}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
                               )}
-                            </div>
 
-                            {/* View Details Arrow */}
-                            <div className="flex-shrink-0 text-slate-500 group-hover:text-primary transition-colors">
-                              <ArrowRight size={16} />
+                              {/* Actions */}
+                              <div className="mt-auto pt-4 flex items-center gap-4 border-t border-slate-800">
+                                {project.demoUrl && (
+                                  <a href={project.demoUrl} className="flex items-center gap-2 text-sm font-medium text-white hover:text-primary transition-colors">
+                                    <ExternalLink size={16} />
+                                    <span>Ver Proyecto</span>
+                                  </a>
+                                )}
+                                {project.githubUrl && (
+                                  <a href={project.githubUrl} className="flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-white transition-colors">
+                                    <Github size={16} />
+                                    <span>Código Fuente</span>
+                                  </a>
+                                )}
+                              </div>
                             </div>
-                          </button>
+                          </div>
                         </div>
                       ))}
                     </div>
