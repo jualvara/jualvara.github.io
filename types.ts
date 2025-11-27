@@ -10,6 +10,7 @@ export interface Project {
   githubUrl?: string;
   demoUrl?: string;
   highlights?: string[];
+  demonstratedSkills?: string[];
   longDescription?: string;
 }
 

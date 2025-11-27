@@ -437,19 +437,41 @@ const Projects: React.FC = () => {
 
                     {/* Content */}
                     <div className="p-6 md:w-3/5 flex flex-col justify-center">
-                      <h3 className={`text-2xl font-bold text-white mb-3 transition-colors ${activeCategory !== 'Odoo'
-                        ? 'group-hover:text-amber-400'
-                        : 'group-hover:text-primary'
-                        }`}>{project.title}</h3>
+                      {/* Logo and Title Section - Only for Odoo category */}
+                      {activeCategory === 'Odoo' && project.id === 'odoo-everyone' ? (
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/5 rounded-xl p-2 border border-primary/20">
+                            <img
+                              src="/images/projects/odoo-everyone-logo-v2.png"
+                              alt="Odoo for Everyone Logo"
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">
+                              {project.title}
+                            </h3>
+                            <p className="text-sm text-primary/70 font-medium">Interactive Learning Platform</p>
+                          </div>
+                        </div>
+                      ) : (
+                        <h3 className={`text-2xl font-bold text-white mb-3 transition-colors ${activeCategory !== 'Odoo'
+                          ? 'group-hover:text-amber-400'
+                          : 'group-hover:text-primary'
+                          }`}>{project.title}</h3>
+                      )}
 
                       <div className="text-slate-300 mb-4 leading-relaxed space-y-4">
-                        <p>{project.description}</p>
+                        <p className="text-base">{project.description}</p>
                         {/* Detailed view only for specific category */}
                         {activeCategory === 'Odoo' && project.longDescription && (
-                          <div className="text-sm text-slate-400 mt-4 p-4 bg-slate-950/50 rounded-xl border border-slate-800/50">
-                            {project.longDescription.split('\n\n').map((paragraph, idx) => (
-                              <p key={idx} className="mb-2 last:mb-0">{paragraph}</p>
-                            ))}
+                          <div className="relative text-sm text-slate-400 mt-4 p-5 bg-gradient-to-br from-slate-900/80 to-slate-950/90 rounded-xl border border-slate-700/50 shadow-lg">
+                            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary to-primary/20 rounded-l-xl"></div>
+                            <div className="pl-3">
+                              {project.longDescription.split('\n\n').map((paragraph, idx) => (
+                                <p key={idx} className="mb-3 last:mb-0 text-slate-300/90">{paragraph}</p>
+                              ))}
+                            </div>
                           </div>
                         )}
                       </div>
@@ -457,16 +479,40 @@ const Projects: React.FC = () => {
                       {/* Highlights only for specific category */}
                       {activeCategory === 'Odoo' && project.highlights && (
                         <div className="mt-4 mb-6">
-                          <h5 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 flex items-center gap-2">
-                            <CheckCircle2 size={16} />
+                          <h5 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
+                            <div className="w-5 h-5 bg-primary/20 rounded flex items-center justify-center">
+                              <CheckCircle2 size={14} className="text-primary" />
+                            </div>
                             Objetivos & Impacto
                           </h5>
                           <div className="grid sm:grid-cols-2 gap-3">
                             {project.highlights.map((highlight, idx) => (
-                              <div key={idx} className="flex items-start gap-2 text-sm text-slate-300 bg-slate-800/30 p-2 rounded-lg border border-slate-700/30">
-                                <ArrowRight size={14} className="text-primary mt-1 flex-shrink-0" />
-                                <span>{highlight}</span>
+                              <div key={idx} className="group/item flex items-start gap-3 text-sm text-slate-300 bg-gradient-to-br from-slate-800/40 to-slate-800/20 p-3 rounded-xl border border-slate-700/40 hover:border-primary/40 transition-all hover:shadow-md hover:shadow-primary/5">
+                                <div className="flex-shrink-0 w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                  <ArrowRight size={12} className="text-primary" />
+                                </div>
+                                <span className="flex-1">{highlight}</span>
                               </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Demonstrated Skills only for specific category */}
+                      {activeCategory === 'Odoo' && project.demonstratedSkills && (
+                        <div className="mb-6">
+                          <h5 className="text-sm font-semibold text-amber-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                            <div className="w-5 h-5 bg-amber-500/20 rounded flex items-center justify-center">
+                              <Code2 size={14} className="text-amber-400" />
+                            </div>
+                            Dominio Técnico
+                          </h5>
+                          <div className="flex flex-wrap gap-2.5">
+                            {project.demonstratedSkills.map((skill, idx) => (
+                              <span key={idx} className="group/skill px-4 py-2 text-xs font-semibold text-amber-200 bg-gradient-to-br from-amber-500/15 to-amber-500/5 rounded-lg border border-amber-500/30 flex items-center gap-2 hover:border-amber-400/50 hover:shadow-md hover:shadow-amber-500/10 transition-all">
+                                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                                {skill}
+                              </span>
                             ))}
                           </div>
                         </div>
