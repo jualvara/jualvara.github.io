@@ -36,25 +36,23 @@ export const PROJECTS: Project[] = [
   {
     id: 'crm-lead-scoring',
     title: 'CRM Lead Rule Scoring',
-    description: 'Sistema de calificación automática de leads para CRM de Odoo 18. Prioriza oportunidades y automatiza acciones comerciales mediante reglas configurables.',
-    longDescription: 'Módulo que automatiza la calificación de leads en el CRM de Odoo 18 mediante un sistema de scoring basado en reglas. Evalúa criterios como fuente, país, industria, importe estimado y etapa del pipeline para calcular automáticamente un score numérico. Clasifica leads en segmentos (Bajo/Medio/Alto) y ejecuta acciones automáticas: asignar equipos/usuarios, crear actividades o enviar emails cuando se cumplen condiciones específicas.',
+    description: 'Potencia tu equipo de ventas automatizando la calificación de leads. Define reglas flexibles para puntuar prospectos y dispara acciones automáticas.',
+    longDescription: 'Este módulo para Odoo 18 Community permite definir reglas flexibles para puntuar tus leads y oportunidades automáticamente. Clasifica a tus prospectos, prioriza los más valiosos y dispara acciones automáticas para no perder ninguna oportunidad de venta.\n\nEl sistema evalúa cada Lead/Oportunidad basándose en reglas que tú defines. Si se cumplen las condiciones, se suma (o resta) puntaje. Dependiendo del puntaje total, el sistema puede ejecutar acciones automáticas como reasignación, creación de actividades o envío de emails.',
     tags: ['Odoo 18', 'CRM', 'Lead Scoring', 'Python', 'Automation', 'XML', 'PostgreSQL'],
     category: 'Odoo',
     imageUrl: '/images/projects/crm-lead-scoring.png',
     githubUrl: 'https://github.com/jualvara/odoo-crm-lead-rule-scoring',
     highlights: [
-      'Priorización automática según potencial de conversión',
-      'Asignación inteligente de leads a equipos comerciales',
-      'Segmentación dinámica por criterios de negocio',
-      'Workflow automatizado: emails, actividades, reasignaciones'
+      'Reglas Flexibles basadas en cualquier campo (País, Industria, etc.)',
+      'Scoring Dinámico con recálculo automático',
+      'Segmentación automática (Bajo, Medio, Alto)',
+      'Automatización de acciones: Reasignación, Actividades, Emails'
     ],
     demonstratedSkills: [
-      'Modelos Complejos (crm.lead.score.rule, crm.lead.score.action)',
-      'Campos Computados con @api.depends',
-      'Acciones Automatizadas (Server Actions)',
-      'Cron Jobs & Procesos en Background',
-      'Herencia de Vistas & Extensión de Formularios',
-      'Integración con Mail & Actividades'
+      'Reglas de Scoring Configurables',
+      'Automatización de Acciones (Server Actions)',
+      'Cron Jobs & Recálculo Periódico',
+      'Integración con CRM & Mail'
     ]
   },
   {
