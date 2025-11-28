@@ -11,26 +11,26 @@ export const PROJECTS: Project[] = [
 
   {
     id: 'odoo-everyone',
-    title: 'Odoo for Everyone',
-    description: 'Plataforma interactiva para dominar el desarrollo en Odoo. Aprende arquitectura, módulos y personalización con retos prácticos.',
-    longDescription: 'Desarrollo de plataforma integral de formación técnica en Odoo orientada a democratizar el acceso al conocimiento especializado en ERP y a mejorar la capacitación técnica dentro de empresas que implementan o utilizan Odoo como herramienta de gestión. El proyecto combina contenidos progresivos, entornos de práctica guiada e inteligencia pedagógica para entrenar a desarrolladores y consultores en escenarios reales del ecosistema Odoo.\n\nLa plataforma se estructura como un sistema modular inspirado en modelos de aprendizaje adaptativo (tipo DataCamp/Duolingo), que permite a usuarios de distintos niveles adquirir competencias clave en desarrollo backend, personalización de vistas, QWeb/OWL, integraciones API y calidad de código conforme a estándares profesionales (OCA).\n\nIncluye workflows gamificados, proyectos aplicados y un motor de evaluación basado en retos diarios/semanales, lo que facilita el refuerzo continuo y la transferencia directa del conocimiento a contextos productivos.',
-    tags: ['Odoo', 'Education', 'LMS', 'Gamification', 'Python', 'OWL'],
+    title: 'OdooMastery AI',
+    description: 'Plataforma gratuita de aprendizaje interactivo impulsada por IA para democratizar el conocimiento de Odoo. Temario completo Junior→Senior con asistente IA experto.',
+    longDescription: 'Plataforma de formación técnica en Odoo que democratiza el acceso al conocimiento especializado en ERP. Ofrece un temario completo gratuito de 15 módulos (Junior→Middle→Senior) con asistente IA en tiempo real powered by Google Gemini. Incluye laboratorio interactivo con editor Monaco, validación automática de código, sistema de gamificación (XP, badges), y chat con IA experta en Odoo para resolver dudas al instante. Reduce costes de formación en 100% vs cursos oficiales ($3,500/persona) y acelera onboarding de 6-8 meses a 3-4 meses.',
+    tags: ['Odoo', 'Education', 'AI', 'Gemini', 'React', 'TypeScript'],
     category: 'Odoo',
-    imageUrl: '/images/projects/odoo-everyone.png', // Placeholder, user might need to generate one
-    demoUrl: '#',
-    githubUrl: '#',
+    imageUrl: '/images/projects/odoo-everyone.png',
+    demoUrl: 'https://jualvara.github.io/odoo_for_everyone/',
+    githubUrl: 'https://github.com/jualvara/odoo_for_everyone',
     highlights: [
-      'Acelerar el onboarding de nuevos desarrolladores.',
-      'Estandarizar prácticas de codificación y calidad.',
-      'Simular escenarios reales antes de intervenir en entornos críticos.',
-      'Medir habilidades, progresos y brechas técnicas dentro del equipo.',
-      'Reducir costos de formación y dependencia de perfiles senior.'
+      'Temario de 15 módulos: Junior→Middle→Senior gratuito',
+      'Asistente IA Gemini 2.0 experto en Odoo 24/7',
+      'Reduce costes formación 100% y onboarding 50%'
     ],
     demonstratedSkills: [
-      'Arquitectura Modular & Herencia (v16-v18)',
-      'Estructura del ORM & API',
-      'Vistas QWeb & OWL Components',
-      'Flujos de Negocio & Seguridad'
+      'React 19 + TypeScript + Vite',
+      'Google Gemini 2.0 Flash API',
+      'Monaco Editor Integration',
+      'GitHub Pages CI/CD',
+      'Gamification \u0026 Progress Tracking',
+      'Interactive Code Validation'
     ]
   },
   {
