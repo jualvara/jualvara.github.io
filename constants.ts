@@ -34,6 +34,30 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
+    id: 'crm-lead-scoring',
+    title: 'CRM Lead Rule Scoring',
+    description: 'Sistema de calificación automática de leads para CRM de Odoo 18. Prioriza oportunidades y automatiza acciones comerciales mediante reglas configurables.',
+    longDescription: 'Módulo que automatiza la calificación de leads en el CRM de Odoo 18 mediante un sistema de scoring basado en reglas. Evalúa criterios como fuente, país, industria, importe estimado y etapa del pipeline para calcular automáticamente un score numérico. Clasifica leads en segmentos (Bajo/Medio/Alto) y ejecuta acciones automáticas: asignar equipos/usuarios, crear actividades o enviar emails cuando se cumplen condiciones específicas.',
+    tags: ['Odoo 18', 'CRM', 'Lead Scoring', 'Python', 'Automation', 'XML', 'PostgreSQL'],
+    category: 'Odoo',
+    imageUrl: '/images/projects/crm-lead-scoring.png',
+    githubUrl: 'https://github.com/jualvara/odoo-crm-lead-rule-scoring',
+    highlights: [
+      'Priorización automática según potencial de conversión',
+      'Asignación inteligente de leads a equipos comerciales',
+      'Segmentación dinámica por criterios de negocio',
+      'Workflow automatizado: emails, actividades, reasignaciones'
+    ],
+    demonstratedSkills: [
+      'Modelos Complejos (crm.lead.score.rule, crm.lead.score.action)',
+      'Campos Computados con @api.depends',
+      'Acciones Automatizadas (Server Actions)',
+      'Cron Jobs & Procesos en Background',
+      'Herencia de Vistas & Extensión de Formularios',
+      'Integración con Mail & Actividades'
+    ]
+  },
+  {
     id: 'ds-1',
     title: 'Modelado Predictivo de Demanda',
     description: 'Desarrollo de modelos predictivos de demanda utilizando Python (pandas, scikit-learn, K-means, regresión).',
