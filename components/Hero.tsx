@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Download, Database, Code2, BarChart3 } from 'lucide-react';
+import { ArrowRight, Download, Database, Code2, BarChart3, Loader2 } from 'lucide-react';
 import { HERO_DATA } from '../constants';
 
 const Hero: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [isDownloading, setIsDownloading] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,14 +65,50 @@ const Hero: React.FC = () => {
               Ver Portafolio
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a
-              href="/CV_Juan_Carlos_Alvarado.pdf"
-              download="CV_Juan_Carlos_Alvarado.pdf"
-              className="flex items-center justify-center px-8 py-4 bg-slate-800/80 hover:bg-slate-700 text-white rounded-full font-semibold transition-all border border-slate-700 hover:border-blue-500/50 backdrop-blur-sm"
+            <button
+              onClick={async () => {
+                setIsDownloading(true);
+
+                // Simulate download preparation
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                // Trigger actual download
+                const link = document.createElement('a');
+                link.href = '/CV_Juan_Carlos_Alvarado.pdf';
+                link.download = 'CV_Juan_Carlos_Alvarado.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Show completion briefly
+                await new Promise(resolve => setTimeout(resolve, 800));
+                setIsDownloading(false);
+              }}
+              disabled={isDownloading}
+              className={`flex items-center justify-center px-8 py-4 rounded-full font-semibold transition-all border backdrop-blur-sm ${isDownloading
+                  ? 'bg-blue-600/80 border-blue-500/50 cursor-wait'
+                  : 'bg-slate-800/80 hover:bg-slate-700 text-white border-slate-700 hover:border-blue-500/50'
+                }`}
             >
-              <Download className="mr-2 w-5 h-5" />
-              Descargar CV
-            </a>
+              {isDownloading ? (
+                <>
+                  <Loader2 className="mr-2 w-5 h-5 animate-spin" />
+                  <span className="relative">
+                    Descargando
+                    <span className="inline-flex ml-0.5">
+                      <span className="animate-bounce" style={{ animationDelay: '0ms' }}>.</span>
+                      <span className="animate-bounce" style={{ animationDelay: '150ms' }}>.</span>
+                      <span className="animate-bounce" style={{ animationDelay: '300ms' }}>.</span>
+                    </span>
+                  </span>
+                </>
+              ) : (
+                <>
+                  <Download className="mr-2 w-5 h-5" />
+                  Descargar CV
+                </>
+              )}
+            </button>
           </div>
 
           {/* Tech Stack Icons Mini */}
